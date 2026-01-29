@@ -5,7 +5,7 @@ import { HeaderSection } from "./sections/header.section";
 import { PaginationSection } from "./sections/pagination.section";
 import ParamsProvider from "@/components/providers/param.provider";
 
-export function VendorListClientPage() {
+export default function VendorListPage() {
   return (
     <ParamsProvider>
       <HeaderSection />

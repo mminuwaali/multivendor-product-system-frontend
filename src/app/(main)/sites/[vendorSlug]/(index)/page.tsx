@@ -20,7 +20,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   try {
     const params = await props.params;
-    const response = await api.get(`/vendors/${params.vendorSlug}`);
+    const response = await api.get(`/sites/${params.vendorSlug}`);
 
     return {
       title: `${response.data.name} | Padisquare`,

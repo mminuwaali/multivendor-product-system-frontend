@@ -43,7 +43,7 @@ export function MyVendorCard(props: MyVendorCardProps) {
           />
         </div>
         <div className="flex flex-col">
-          <Link href={`/site/${slug}`}>
+          <Link href={`/sites/${slug}`}>
             <h3 className="text-xl font-bold text-slate-800 dark:text-white group-hover:text-primary-dark transition-colors">
               {props.item.name}
             </h3>
@@ -83,7 +83,7 @@ export function MyVendorCard(props: MyVendorCardProps) {
       </div>
 
       {/* Action Button */}
-      <Link href={`/site/${slug}`}>
+      <Link href={`/sites/${slug}`}>
         <button className="mt-2 w-full py-3 rounded-2xl bg-primary hover:bg-primary-dark text-white font-bold transition-all shadow-lg shadow-primary/20 active:scale-95">
           View Store <i className="fa-solid fa-arrow-right ml-2 text-xs" />
         </button>

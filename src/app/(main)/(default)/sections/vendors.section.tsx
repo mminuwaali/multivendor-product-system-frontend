@@ -36,7 +36,7 @@ export function VendorsSection() {
         </div>
 
         <Link
-          href="/site"
+          href="/sites"
           className="group flex items-center gap-2 text-primary-dark font-bold hover:underline underline-offset-4 transition-all"
         >
           Explore All Vendors
