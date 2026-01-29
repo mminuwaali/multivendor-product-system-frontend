@@ -19,12 +19,7 @@ import { FooterSection } from "./sections/footer.section";
 import { ForgotPasswordSchema } from "@/constants/schema";
 
 export default function ForgotPasswordPage() {
-  const initialValues = React.useMemo(
-    () => ({
-      email: "",
-    }),
-    [],
-  );
+  const initialValues = React.useMemo(() => ({ email: "" }), []);
 
   const onSubmit = (values: { email: string }) => {
     console.log("ForgotPassword Values:", values);
