@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@variant dark (&:where(.dark, .dark *));
+
+@import "./theme.css";
+@import "./utilities.css";
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border scroll-smooth;
+
+    ::-webkit-scrollbar {
+      @apply w-1 h-1 rounded-xl bg-gray-50;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      @apply rounded-full bg-gray-600;
+    }
+  }
+
+  body {
+    @apply flex flex-col h-auto w-screen min-h-screen overflow-x-hidden font-nunito;
+
+    #root {
+      @apply grow flex gap-4 flex-col relative w-full;
+
+      section {
+        @apply w-full flex-none default-spacing;
+      }
+    }
+
+    #portal {
+      @apply empty:opacity-0 empty:pointer-events-none;
+      @apply z-50 top-0 left-0 flex flex-1 fixed items-center justify-center h-screen w-full bg-black/40 backdrop-blur-md overflow-x-hidden overflow-y-auto;
+    }
+  }
+}

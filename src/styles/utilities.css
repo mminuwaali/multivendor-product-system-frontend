@@ -1,0 +1,83 @@
+@utility default-spacing {
+  @apply py-4 px-5%;
+}
+
+@utility variant-small-caps {
+  font-variant: small-caps;
+}
+
+@utility hide-scrollbar {
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE and Edge */
+  -ms-overflow-style: none;
+
+  /* WebKit */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility grid-cols-fit-8 {
+  grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+}
+@utility grid-cols-fit-10 {
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+}
+@utility grid-cols-fit-12 {
+  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+}
+@utility grid-cols-fit-14 {
+  grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+}
+@utility grid-cols-fit-16 {
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+}
+@utility grid-cols-fit-18 {
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+}
+@utility grid-cols-fit-20 {
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+}
+@utility grid-cols-fit-22 {
+  grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
+}
+@utility grid-cols-fit-24 {
+  grid-template-columns: repeat(auto-fit, minmax(24em, 1fr));
+}
+@utility grid-cols-fill-8 {
+  grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+}
+@utility grid-cols-fill-10 {
+  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+}
+@utility grid-cols-fill-12 {
+  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+}
+@utility grid-cols-fill-14 {
+  grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+}
+@utility grid-cols-fill-16 {
+  grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+}
+@utility grid-cols-fill-18 {
+  grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+}
+@utility grid-cols-fill-20 {
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+}
+@utility grid-cols-fill-22 {
+  grid-template-columns: repeat(auto-fill, minmax(22em, 1fr));
+}
+@utility grid-cols-fill-24 {
+  grid-template-columns: repeat(auto-fill, minmax(24em, 1fr));
+}
+
+@utility glass-effect {
+  @apply bg-white/40 dark:bg-black/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
+}
+
+@utility text-gradient-green {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-emerald-500 to-teal-500;
+}
