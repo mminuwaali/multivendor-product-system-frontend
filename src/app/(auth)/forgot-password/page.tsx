@@ -18,7 +18,7 @@ import { FooterSection } from "./sections/footer.section";
 // Constants
 import { ForgotPasswordSchema } from "@/constants/schema";
 
-export function ForgotPasswordClientPage() {
+export default function ForgotPasswordPage() {
   const initialValues = React.useMemo(
     () => ({
       email: "",

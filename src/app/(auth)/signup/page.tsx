@@ -22,7 +22,7 @@ import { HeaderSection } from "./sections/header.section";
 // Constants
 import { SignupSchema } from "@/constants/schema";
 
-export function SignupClientPage() {
+export default function SignupPage() {
   const signUpMutation = useSignUp();
 
   const initialValues = React.useMemo<ISignUpForm>(
