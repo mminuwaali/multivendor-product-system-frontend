@@ -2,7 +2,7 @@
 import { HeaderSection } from "./sections/header.section";
 import { ContentSection } from "./sections/content.section";
 
-export function TermsClientPage() {
+export default function TermsPage() {
   return (
     <>
       <HeaderSection />

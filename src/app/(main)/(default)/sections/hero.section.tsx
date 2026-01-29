@@ -42,7 +42,7 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-wrap gap-4 mt-4">
-            <Link href="/vendors">
+            <Link href="/sites">
               <button className="px-8 py-4 rounded-2xl bg-primary hover:bg-primary-dark text-white font-bold text-lg transition-all shadow-xl shadow-primary/20 active:scale-95">
                 Explore Vendors
               </button>

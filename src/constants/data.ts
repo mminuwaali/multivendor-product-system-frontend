@@ -1,7 +1,7 @@
 export const NAV_LINKS = [
   {
     label: "Vendors",
-    href: "/vendors",
+    href: "/sites",
   },
   {
     label: "Products",
