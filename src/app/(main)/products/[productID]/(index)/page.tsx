@@ -1,8 +1,8 @@
 // Sections
-import { InfoSection } from "../sections/info.section";
-import { ReviewsSection } from "../sections/reviews.section";
+import { InfoSection } from "./sections/info.section";
+import { ReviewsSection } from "./sections/reviews.section";
 
-export function ProductIndexClientPage() {
+export default function ProductIndexPage() {
   return (
     <>
       <InfoSection />

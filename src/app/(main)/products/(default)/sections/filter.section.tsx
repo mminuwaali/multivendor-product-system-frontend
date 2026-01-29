@@ -34,7 +34,7 @@ export function FilterSection() {
         categoriesData?.data?.map(function (cat) {
           return {
             label: cat.name,
-            value: cat.slug,
+            value: cat._id,
           };
         }) || [];
       return [...baseOptions, ...fetchedOptions];
