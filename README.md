@@ -37,7 +37,7 @@ A modern, responsive frontend application built with **Next.js 14+ (App Router)*
 1.  **Clone the repository:**
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/mminuwaali/multivendor-product-system-frontend.git
     cd nextjs-product-system
     ```
 
