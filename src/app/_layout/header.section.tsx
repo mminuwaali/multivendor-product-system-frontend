@@ -3,6 +3,7 @@
 // Framework
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 // External
 import { motion, Variants } from "framer-motion";
@@ -11,9 +12,14 @@ import { motion, Variants } from "framer-motion";
 import { NAV_LINKS } from "@/constants/data";
 import { MyNavLink } from "@/components/primary/nav.primary";
 import { MyThemeSwitcher } from "@/components/primary/theme-switcher.primary";
+import { lightIcon, darkIcon } from "@/constants/media";
+import { useAuthCtx } from "@/components/providers/auth.provider";
+import { useSignOut } from "@/hooks/requests/auth.hook";
 
 export function HeaderLayoutSection() {
   const [scrolled, setScrolled] = React.useState(false);
+  const authCtx = useAuthCtx();
+  const handleSignOut = useSignOut();
 
   React.useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -44,12 +50,20 @@ export function HeaderLayoutSection() {
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-8">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2 group shrink-0">
-          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform">
-            <i className="fa-solid fa-store text-xl" />
+          <div className="relative h-20 w-20 transition-transform">
+            <React.Fragment>
+              <Image
+                src={lightIcon}
+                alt="GlassMarket"
+                className="w-full h-full object-contain block dark:hidden"
+              />
+              <Image
+                src={darkIcon}
+                alt="GlassMarket"
+                className="w-full h-full object-contain hidden dark:block"
+              />
+            </React.Fragment>
           </div>
-          <span className="text-2xl font-black text-slate-800 dark:text-white tracking-tighter">
-            Glass<span className="text-primary">Market</span>
-          </span>
         </Link>
 
         {/* Navigation & Auth */}
@@ -73,11 +87,20 @@ export function HeaderLayoutSection() {
               </span>
             </Link>
 
-            <Link href="/signin">
-              <button className="px-6 py-2.5 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold transition-all shadow-lg shadow-primary/20 active:scale-95">
-                Sign In
+            {authCtx.logged ? (
+              <button
+                onClick={handleSignOut}
+                className="px-6 py-2.5 rounded-xl bg-red-500 hover:bg-red-600 text-white font-bold transition-all shadow-lg shadow-red-500/20 active:scale-95"
+              >
+                Logout
               </button>
-            </Link>
+            ) : (
+              <Link href="/signin">
+                <button className="px-6 py-2.5 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold transition-all shadow-lg shadow-primary/20 active:scale-95">
+                  Sign In
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
