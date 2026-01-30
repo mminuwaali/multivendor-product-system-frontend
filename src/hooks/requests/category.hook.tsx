@@ -1,4 +1,9 @@
-import { useGetOne, useGetPage, useGetSearch, useGetInfinite } from "../api.hook";
+import {
+  useGetOne,
+  useGetPage,
+  useGetSearch,
+  useGetInfinite,
+} from "../api.hook";
 
 export function useGetCategory(id?: unknown) {
   return useGetOne<ICategoryModel>({

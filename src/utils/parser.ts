@@ -59,13 +59,34 @@ function extractDjangoErrors(data: unknown) {
   return messages;
 }
 
+function extractNestJSErrors(data: unknown) {
+  if (!data || typeof data !== "object") return [];
+
+  const record = data as Record<string, unknown>;
+
+  if (typeof record.message === "string") return [record.message];
+  if (Array.isArray(record.message)) return record.message.map(String);
+
+  return [];
+}
+
 function extractAxiosErrors(err: AxiosError) {
   if (!err.response) return ["Network error. Please check your connection."];
 
-  const data = err.response.data;
+  const { data } = err.response;
 
   if (typeof data === "string") return [data];
-  if (typeof data === "object") return extractDjangoErrors(data);
+
+  if (typeof data === "object" && data !== null) {
+    const record = data as Record<string, unknown>;
+
+    // NestJS check
+    if ("statusCode" in record && "message" in record)
+      return extractNestJSErrors(record);
+
+    // Fallback
+    return extractDjangoErrors(data);
+  }
 
   return ["An unexpected server error occurred."];
 }

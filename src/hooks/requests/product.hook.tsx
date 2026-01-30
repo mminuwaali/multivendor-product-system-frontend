@@ -1,4 +1,3 @@
-import { api } from "@/utils/request";
 import {
   useGetOne,
   useGetPage,
